@@ -1,0 +1,202 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary: #0d1b2a;
+  --secondary: #1b263b;
+  --highlight: #00b4d8;
+  --highlight-hover: #0077b6;
+  --text-light: #e0e1dd;
+  --black: #000000;
+}
+
+/* Body */
+body {
+  background-color: var(--primary);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+header {
+  background-color: var(--black);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--highlight);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  background-color: var(--highlight);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+/* Sections */
+.section {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  transition: background-color 0.5s ease;
+}
+
+.section:nth-child(even) {
+  background-color: var(--secondary);
+}
+
+h1, h2 {
+  color: var(--highlight);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.content {
+  max-width: 800px;
+  animation: fadeInUp 1s ease;
+}
+
+/* Lists */
+ul {
+  text-align: left;
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.8rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--highlight);
+  color: var(--black);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--highlight-hover);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Form */
+.connect-form {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #1e1e2f;
+  color: var(--text-light);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--highlight);
+  box-shadow: 0 0 8px var(--highlight);
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9fa9b8;
+}
+
+/* Contact Links */
+a {
+  color: var(--highlight);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--highlight-hover);
+}
+
+/* Footer */
+footer {
+  background-color: var(--black);
+  color: #cccccc;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
